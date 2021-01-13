@@ -35,7 +35,7 @@ fi
 
 # EFI part
 print "Creating EFI part"
-sgdisk -n1:1M:+512M -t1:EF00 "$DISK"
+sgdisk -n1:1M:+256M -t1:EF00 "$DISK"
 EFI=$DISK-part1
 
 # ZFS part
