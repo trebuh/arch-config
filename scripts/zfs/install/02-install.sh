@@ -18,11 +18,11 @@ pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-u
 # Generate fstab excluding ZFS entries
 print "Generate fstab excluding ZFS entries"
 genfstab -U /mnt | grep -v "zroot" | tr -s '\n' | sed 's/\/mnt//'  > /mnt/etc/fstab
- 
+
 # Set hostname
 echo "Please enter hostname :"
-read hostname
-echo $hostname > /mnt/etc/hostname
+read -r hostname
+echo "$hostname" > /mnt/etc/hostname
 
 # Configure /etc/hosts
 print "Configure hosts file"
@@ -182,7 +182,7 @@ systemctl enable zfs.target --root=/mnt
 
 # Generate hostid
 print "Generate hostid"
-arch-chroot /mnt zgenhostid $(hostid)
+arch-chroot /mnt zgenhostid "$(hostid)"
 
 # Umount all parts
 print "Umount all parts"

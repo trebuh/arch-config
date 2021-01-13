@@ -28,28 +28,28 @@ echo # move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # Clear disk
-    dd if=/dev/zero of=$DISK bs=512 count=1
-    wipefs -af $DISK
-    sgdisk -Zo $DISK
+    dd if=/dev/zero of="$DISK" bs=512 count=1
+    wipefs -af "$DISK"
+    sgdisk -Zo "$DISK"
 fi
 
 # EFI part
 print "Creating EFI part"
-sgdisk -n1:1M:+512M -t1:EF00 $DISK
+sgdisk -n1:1M:+512M -t1:EF00 "$DISK"
 EFI=$DISK-part1
 
 # ZFS part
 print "Creating ZFS part"
-sgdisk -n3:0:0 -t3:bf01 $DISK
+sgdisk -n3:0:0 -t3:bf01 "$DISK"
 ZFS=$DISK-part3
 
 # Inform kernel
-partprobe $DISK
+partprobe "$DISK"
 
 # Format boot part
 sleep 1
 print "Format EFI part"
-mkfs.vfat $EFI
+mkfs.vfat "$EFI"
 
 # Create ZFS pool
 print "Create ZFS pool"
@@ -68,12 +68,12 @@ zpool create -f -o ashift=12           \
              -O canmount=off           \
              -O devices=off            \
              -R /mnt                   \
-             zroot $ZFS
+             zroot "$ZFS"
 
 # Slash dataset
 print "Create slash dataset"
 zfs create -o mountpoint=none                               zroot/ROOT
-zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/default 
+zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/default
 
 # Manually mount slash dataset
 zfs mount zroot/ROOT/default
@@ -100,7 +100,7 @@ zfs create -o mountpoint=/var/lib -o canmount=off zroot/var/lib
 zfs create                                        zroot/var/lib/libvirt
 zfs create                                        zroot/var/lib/docker
 
-# Set bootfs 
+# Set bootfs
 print "Set ZFS bootfs"
 zpool set bootfs="zroot/ROOT/default" zroot
 
@@ -120,7 +120,7 @@ zfs mount -a
 # Mount EFI part
 print "Mount EFI part"
 mkdir /mnt/efi
-mount $EFI /mnt/efi
+mount "$EFI" /mnt/efi
 
 # Prepare zectl
 print "Prepare zectl"
