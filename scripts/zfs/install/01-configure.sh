@@ -40,8 +40,8 @@ EFI=$DISK-part1
 
 # ZFS part
 print "Creating ZFS part"
-sgdisk -n3:0:0 -t3:bf01 "$DISK"
-ZFS=$DISK-part3
+sgdisk -n2:0:0 -t2:bf01 "$DISK"
+ZFS=$DISK-part2
 
 # Inform kernel
 partprobe "$DISK"
