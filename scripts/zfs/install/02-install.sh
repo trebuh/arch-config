@@ -133,30 +133,8 @@ IPForward=yes
 UseDNS=no
 RouteMetric=10
 EOF
-cat > /mnt/etc/systemd/network/wlX.network <<"EOF"
-[Match]
-Name=wl*
-
-[Network]
-DHCP=ipv4
-IPForward=yes
-
-[DHCP]
-UseDNS=no
-RouteMetric=20
-EOF
 systemctl enable systemd-networkd --root=/mnt
 systemctl disable systemd-networkd-wait-online --root=/mnt
-
-cat > /mnt/etc/connman/main.conf <<"EOF"
-[General]
-PreferredTechnologies=ethernet,wifi
-NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,docker,veth,eth,wlan,vnet
-AllowHostnameUpdates = false
-AllowDomainnameUpdates = false
-SingleConnectedTechnology = true
-EOF
-systemctl enable connman --root=/mnt
 
 # Configure DNS
 print "Configure DNS"
