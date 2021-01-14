@@ -13,7 +13,7 @@ reflector --country France --country Germany --latest 6 --protocol https --sort 
 
 # Install
 print "Install Arch Linux"
-pacstrap /mnt base base-devel linux-lts linux-lts-headers linux-firmware intel-ucode efibootmgr vim git ansible connman wpa_supplicant
+pacstrap /mnt base base-devel linux linux-headers linux-firmware intel-ucode efibootmgr vim git ansible connman wpa_supplicant
 
 # Generate fstab excluding ZFS entries
 print "Generate fstab excluding ZFS entries"
@@ -89,9 +89,9 @@ timeout 10
 EOSF
   cat > /efi/loader/entries/org.zectl-default.conf <<"EOSF"
 title           Arch Linux ZFS Default
-linux           /env/org.zectl-default/vmlinuz-linux-lts
+linux           /env/org.zectl-default/vmlinuz-linux
 initrd          /env/org.zectl-default/intel-ucode.img
-initrd          /env/org.zectl-default/initramfs-linux-lts.img
+initrd          /env/org.zectl-default/initramfs-linux.img
 options         zfs=zroot/ROOT/default rw
 EOSF
 
