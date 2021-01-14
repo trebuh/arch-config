@@ -41,7 +41,7 @@ echo 'LANG="fr_FR.UTF-8"' > /mnt/etc/locale.conf
 # Prepare initramfs
 print "Prepare initramfs"
 cat > /mnt/etc/mkinitcpio.conf <<"EOF"
-MODULES=(i915 intel_agp)
+MODULES=()
 BINARIES=()
 FILES=()
 HOOKS=(base udev autodetect modconf block keyboard keymap zfs filesystems)
