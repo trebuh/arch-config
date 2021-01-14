@@ -98,10 +98,13 @@ EOSF
   # Update bootloader configuration
   bootctl --path=/efi update
 
-  # Create user
-  useradd -m user
-
 EOF
+
+# Create user
+print "Add regular user"
+printf '%s\n' "Please enter the regular username:"
+read -r user
+arch-chroot /mnt /bin/useradd -m "$user"
 
 # Set root passwd
 print "Set root password"
@@ -109,7 +112,7 @@ arch-chroot /mnt /bin/passwd
 
 # Set user passwd
 print "Set user password"
-arch-chroot /mnt /bin/passwd user
+arch-chroot /mnt /bin/passwd "$user"
 
 # Configure sudo
 print "Configure sudo"
