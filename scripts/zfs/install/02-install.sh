@@ -111,7 +111,7 @@ print "Set root password"
 arch-chroot /mnt /bin/passwd
 
 # Set user passwd
-print "Set user password"
+print "Set user '$user' password"
 arch-chroot /mnt /bin/passwd "$user"
 
 # Configure network
