@@ -9,8 +9,6 @@
       - glow # render markdown cli
 
 - name: install base packages
-  command:
-  import_playbook:
   pacman:
     name:
       # Main
@@ -19,7 +17,7 @@
       # Shell
       - fish               # powerful shell
      # - git                # already installed
-     # - exa                # powerful ls
+      - exa                # powerful ls
       - bc                 # maths
       - jq                 # json processor
       - most               # colorized pager
