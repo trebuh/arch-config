@@ -22,7 +22,7 @@
 
   roles:
     - { role: pacman, tags: pacman }
-    - { role: aur, tags: aur }
+  #  - { role: aur, tags: aur }
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: virtualization, tags: virtualization }
