@@ -13,7 +13,7 @@ reflector --country France --country Germany --latest 6 --protocol https --sort 
 
 # Install
 print "Install Arch Linux"
-pacstrap /mnt base base-devel linux linux-headers efibootmgr vim git
+pacstrap /mnt base base-devel linux linux-headers efibootmgr vim git ansible
 
 # Generate fstab excluding ZFS entries
 print "Generate fstab excluding ZFS entries"
