@@ -43,30 +43,17 @@
   pacman:
     name:
       - imv # img visualizer
-      - kitty # terminal emulator
+      - alacritty # terminal emulator
       - code # code editor
-      - evince # pdf viewer
+      - okular # pdf viewer
       - firefox
-      - firefox-i18n-fr
-      - gimp # img editor
       - kolourpaint # img editor
       - shotwell # photo manager
-      - libreoffice-still-fr # libreoffice suite fr
-      - lollypop # music player
       - lxappearance # theme manager
       - mpv # video player
-      - thunar # file manager
       - openvpn
-      - playerctl # music player cli controller
       - rdesktop # remote desktop client
-      - steam # games manager
-      - transmission-gtk # torrent downloader
-      - texlive-bin # latex
-      - texlive-core # latex
-      - texlive-latexextra # latex
-      - variety # random backgrounds
       - papirus-icon-theme # icon theme
-      - x2goclient 
       - youtube-dl
     state: present
 
@@ -74,9 +61,7 @@
   become: no
   shell: gpg --recv --keyserver pool.sks-keyservers.net '{{item}}'
   loop:
-    - D1742AD60D811D58 # spotify
     - F4B432D5D67990E3 # wob
-
   changed_when: false
 
 - name: install aur packages
@@ -84,26 +69,13 @@
   aur:
     skip_installed: true
     name:
-      - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
       - equilux-theme 
       - wdisplays-git # arandr for wayland
       - wf-recorder-git # screen recorder for wayland
       - grimshot-git # grim+slurp wrapper
       - swaylock-fancy-git # locker for wayland
       - wob # bars for wayland
-      - connman-gtk # connman gtk gui
       - gnome-ssh-askpass2 # ssh askpass gui
-      - google-chrome
-      - adb-sync-git # android dir sync
       - downgrade # package downgrader
-      - lf # cli file manager
-      - mindustry-bin # game
-      - minecraft-launcher # game
-      - molotov # french tv wrapper
       - otf-font-awesome
-      #- ttf-impallari-cabin-font # xelatex cv
       - pastel # color viewer
-      - spotify # music player
-      - tiny-irc-client-git
-      - starleaf-breeze
-      - zoom
