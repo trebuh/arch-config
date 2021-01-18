@@ -25,7 +25,7 @@
   #  - { role: aur, tags: aur }
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
-    - { role: virtualization, tags: virtualization }
+  #  - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }
     - { role: recovery, tags: recovery }
     - { role: zfs/systemd-boot-zectl, tags: boot }
