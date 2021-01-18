@@ -8,6 +8,6 @@
 
 - name: configure mkinitcpio preset linux
   copy:
-    src: linux-lts.preset
+    src: linux.preset
     dest: /etc/mkinitcpio.d/
   notify: generates initramfs
