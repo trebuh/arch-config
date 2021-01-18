@@ -22,11 +22,6 @@
         regexp: '#ILoveCandy'
         line: 'ILoveCandy'
         insertafter: '# Misc options'
-    - blockinfile:
-        path: /etc/pacman.conf
-        block: |
-          [multilib]
-          Include = /etc/pacman.d/mirrorlist
 
 - name: Update lists and upgrade
   pacman:
