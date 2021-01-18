@@ -4,11 +4,13 @@
   aur:
     skip_installed: true
     name:
-      - starship-bin
-      - ttf-impallari-cabin-font # cv font
+    #  - starship-bin
+    #  - ttf-impallari-cabin-font # cv font
       - glow # render markdown cli
 
 - name: install base packages
+  command:
+  import_playbook:
   pacman:
     name:
       # Main
@@ -16,8 +18,8 @@
       - noto-fonts         # unicode font
       # Shell
       - fish               # powerful shell
-      - git                #
-      - exa                # powerful ls
+     # - git                # already installed
+     # - exa                # powerful ls
       - bc                 # maths
       - jq                 # json processor
       - most               # colorized pager
@@ -26,7 +28,7 @@
       - tree               #
       - vi                 #
       - man                #
-      - screen             # terminal multiplexer
+      - tmux             # terminal multiplexer
       - asciinema          # term recorder
       - expect             # automation tool
       - arch-audit         # list vulnerabilities
@@ -52,8 +54,8 @@
       - openbsd-netcat     # network utility
       - speedtest-cli      # 
       # Utils
-      - borgbackup         # backup utility
-      - borgmatic         # backup utility automation
+      # - borgbackup         # backup utility
+      # - borgmatic         # backup utility automation
       - rsync              #
       - rclone             # 
       - words              # dictionnaries
@@ -63,7 +65,7 @@
       - cifs-utils         #
       - shellcheck         # sh linter
       - oath-toolkit       # otp tool
-      - python2-pip        # python2 package manager
+      # - python2-pip        # python2 package manager
       - python-pip         # python3 package manager
       - dmidecode          # dump dmi table content
       - python-pre-commit  # pre-commit hook manager
