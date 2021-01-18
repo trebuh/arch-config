@@ -22,11 +22,7 @@
     name:
       - mesa
       - mesa-demos
-      - lib32-virtualgl
-      - vulkan-intel
-      - lib32-vulkan-intel
-      - intel-media-driver
-      - libva-utils
+      - xf86-video-fbdev
     state: present
 
 - name: install audio packages
