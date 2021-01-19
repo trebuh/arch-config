@@ -90,7 +90,6 @@ EOSF
   cat > /efi/loader/entries/org.zectl-default.conf <<"EOSF"
 title           Arch Linux ZFS Default
 linux           /env/org.zectl-default/vmlinuz-linux
-initrd          /env/org.zectl-default/intel-ucode.img
 initrd          /env/org.zectl-default/initramfs-linux.img
 options         zfs=zroot/ROOT/default rw
 EOSF
