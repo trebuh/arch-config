@@ -126,9 +126,9 @@ arch-chroot /mnt /bin/passwd
 
 # Configure sudo
 print "Configure sudo"
-cat > /mnt/etc/sudoers <<"EOF"
+cat > /mnt/etc/sudoers <<EOF
 root ALL=(ALL) ALL
-user ALL=(ALL) ALL
+$user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
