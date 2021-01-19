@@ -49,7 +49,7 @@ COMPRESSION="lz4"
 EOF
 
 # Chroot and configure
-print "Chroot and configure system"
+print "Chroot and install zfs necessary packages"
 
 arch-chroot /mnt /bin/bash -xe <<"EOF"
 
@@ -63,7 +63,11 @@ Server = http://mirror.sum7.eu/archlinux/archzfs/archzfs/x86_64
 Server = https://mirror.biocrafting.net/archlinux/archzfs/archzfs/x86_64
 EOSF
   pacman -Syu zfs-dkms zfs-utils
+EOF
 
+print "Chroot and configure system"
+
+arch-chroot /mnt /bin/bash -xe <<"EOF"
   # Sync clock
   hwclock --systohc
 
@@ -77,16 +81,23 @@ EOSF
 
   # Generate Initramfs
   mkinitcpio -P
+EOF
+
+print "Chroot, install, and configure bootloader"
+
+arch-chroot /mnt /bin/bash -xe <<"EOF"
 
   # Install bootloader
   bootctl --path=/efi install
 
   # Generates boot entries
   mkdir -p /efi/loader/entries
+
   cat > /efi/loader/loader.conf <<"EOSF"
 default org.zectl-default
 timeout 10
 EOSF
+
   cat > /efi/loader/entries/org.zectl-default.conf <<"EOSF"
 title           Arch Linux ZFS Default
 linux           /env/org.zectl-default/vmlinuz-linux
@@ -105,13 +116,13 @@ printf '%s\n' "Please enter the regular username:"
 read -r user
 arch-chroot /mnt /bin/useradd -m "$user"
 
-# Set root passwd
-print "Set root password"
-arch-chroot /mnt /bin/passwd
-
 # Set user passwd
 print "Set user '$user' password"
 arch-chroot /mnt /bin/passwd "$user"
+
+# Set root passwd
+print "Set root password"
+arch-chroot /mnt /bin/passwd
 
 # Configure sudo
 print "Configure sudo"
