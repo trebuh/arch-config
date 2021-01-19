@@ -114,6 +114,14 @@ arch-chroot /mnt /bin/passwd
 print "Set user '$user' password"
 arch-chroot /mnt /bin/passwd "$user"
 
+# Configure sudo
+print "Configure sudo"
+cat > /mnt/etc/sudoers <<"EOF"
+root ALL=(ALL) ALL
+user ALL=(ALL) ALL
+Defaults rootpw
+EOF
+
 # Configure network
 print "Configure networking"
 cat > /mnt/etc/systemd/network/enoX.network <<"EOF"
