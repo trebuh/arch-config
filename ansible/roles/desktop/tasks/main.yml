@@ -6,13 +6,13 @@
       - swaybg
       - xorg-server-xwayland
       - waybar
-      - mako # notification daemon
-      - kanshi # autorandr for wayland
-      - grim # screenshots
-      - slurp # region selector
-      - wl-clipboard # clipboard manager
-      - brightnessctl # brightness manager
-      - wofi # rofi for wayland
+      - mako               # notification daemon
+      - kanshi             # autorandr for wayland
+      - grim               # screenshots
+      - slurp              # region selector
+      - wl-clipboard       # clipboard manager
+      - brightnessctl      # brightness manager
+      - wofi               # rofi for wayland
       - swayidle
       - xdg-user-dirs
     state: present
@@ -38,17 +38,17 @@
 - name: install applications packages
   pacman:
     name:
-      - imv # img visualizer
-      - alacritty # terminal emulator
-      - code # code editor
-      - okular # pdf viewer
+      - imv                # img visualizer
+      - alacritty          # terminal emulator
+      - code               # code editor
+      - okular             # pdf viewer
       - firefox
-      - kolourpaint # img editor
-      - shotwell # photo manager
-      - lxappearance # theme manager
-      - mpv # video player
+      - kolourpaint        # img editor
+      - shotwell           # photo manager
+      - lxappearance       # theme manager
+      - mpv                # video player
       - openvpn
-      - rdesktop # remote desktop client
+      - rdesktop           # remote desktop client
       - papirus-icon-theme # icon theme
       - youtube-dl
     state: present
@@ -65,13 +65,13 @@
   aur:
     skip_installed: true
     name:
-      - equilux-theme 
-      - wdisplays-git # arandr for wayland
-      - wf-recorder-git # screen recorder for wayland
-      - grimshot-git # grim+slurp wrapper
+      - equilux-theme
+      - wdisplays-git      # arandr for wayland
+      - wf-recorder-git    # screen recorder for wayland
+      - grimshot-git       # grim+slurp wrapper
       - swaylock-fancy-git # locker for wayland
-      - wob # bars for wayland
+      - wob                # bars for wayland
       - gnome-ssh-askpass2 # ssh askpass gui
-      - downgrade # package downgrader
+      - downgrade          # package downgrader
       - otf-font-awesome
-      - pastel # color viewer
+      - pastel             # color viewer

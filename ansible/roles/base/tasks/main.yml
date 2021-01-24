@@ -16,7 +16,7 @@
       - noto-fonts         # unicode font
       # Shell
       - fish               # powerful shell
-     # - git                # already installed
+     # - git               # already installed
       - exa                # powerful ls
       - bc                 # maths
       - jq                 # json processor
@@ -26,7 +26,7 @@
       - tree               #
       - vi                 #
       - man                #
-      - tmux             # terminal multiplexer
+      - tmux               # terminal multiplexer
       - asciinema          # term recorder
       - expect             # automation tool
       - arch-audit         # list vulnerabilities
@@ -50,12 +50,12 @@
       - wget               # downloader
       - bind-tools         # dns tools
       - openbsd-netcat     # network utility
-      - speedtest-cli      # 
+      - speedtest-cli      #
       # Utils
       # - borgbackup         # backup utility
       # - borgmatic         # backup utility automation
       - rsync              #
-      - rclone             # 
+      - rclone             #
       - words              # dictionnaries
       - fzf                # fuzzy finder
       - neofetch           #
