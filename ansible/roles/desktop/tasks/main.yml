@@ -2,19 +2,29 @@
 - name: install desktop packages
   pacman:
     name:
-      - sway
-      - swaybg
-      - xorg-server-xwayland
-      - waybar
-      - mako # notification daemon
-      - kanshi # autorandr for wayland
-      - grim # screenshots
-      - slurp # region selector
-      - wl-clipboard # clipboard manager
       - brightnessctl # brightness manager
-      - wofi # rofi for wayland
-      - swayidle
       - xdg-user-dirs
+      - xorg-server
+      - xorg-xinit
+      - i3-wm
+      - i3status-rust
+      - dunst
+      - autorandr
+      - arandr
+      - scrot
+      - rofi
+      - xclip
+    # - xorg-server-xwayland
+    # - sway
+    # - swaybg
+    # - waybar
+    # - mako # notification daemon
+    # - kanshi # autorandr for wayland
+    # - grim # screenshots
+    # - slurp # region selector
+    # - wl-clipboard # clipboard manager
+    # - wofi # rofi for wayland
+    # - swayidle
     state: present
 
 - name: install video packages
@@ -38,7 +48,8 @@
 - name: install applications packages
   pacman:
     name:
-      - imv # img visualizer
+      - feh # img visualizer 
+      - imv # img visualizer 2
       - alacritty # terminal emulator
       - code # code editor
       - okular # pdf viewer
@@ -65,13 +76,13 @@
   aur:
     skip_installed: true
     name:
-      - equilux-theme 
-      - wdisplays-git # arandr for wayland
-      - wf-recorder-git # screen recorder for wayland
-      - grimshot-git # grim+slurp wrapper
-      - swaylock-fancy-git # locker for wayland
-      - wob # bars for wayland
-      - gnome-ssh-askpass2 # ssh askpass gui
+      - equilux-theme
+      # - wdisplays-git # arandr for wayland
+      # - wf-recorder-git # screen recorder for wayland
+      # - grimshot-git # grim+slurp wrapper
+      # - swaylock-fancy-git # locker for wayland
+      # - wob # bars for wayland
+      # - gnome-ssh-askpass2 # ssh askpass gui
       - downgrade # package downgrader
       - otf-font-awesome
       - pastel # color viewer
