@@ -77,12 +77,15 @@
     skip_installed: true
     name:
       - equilux-theme
-      # - wdisplays-git # arandr for wayland
-      # - wf-recorder-git # screen recorder for wayland
-      # - grimshot-git # grim+slurp wrapper
+      # - wdisplays-git      # arandr for wayland
+      # - wf-recorder-git    # screen recorder for wayland
+      # - grimshot-git       # grim+slurp wrapper
       # - swaylock-fancy-git # locker for wayland
-      # - wob # bars for wayland
+      # - wob                # bars for wayland
       # - gnome-ssh-askpass2 # ssh askpass gui
-      - downgrade # package downgrader
+      - downgrade            # package downgrader
       - otf-font-awesome
-      - pastel             # color viewer
+      - pastel               # color viewer
+      - intellij-idea-ultimate-edition
+      - pycharm-professional
+      - goland
