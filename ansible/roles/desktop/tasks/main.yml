@@ -48,18 +48,18 @@
 - name: install applications packages
   pacman:
     name:
-      - feh # img visualizer 
-      - imv # img visualizer 2
-      - alacritty # terminal emulator
-      - code # code editor
-      - okular # pdf viewer
+      - feh                # img visualizer
+      - imv                # img visualizer
+      - alacritty          # terminal emulator
+      - code               # code editor
+      - okular             # pdf viewer
       - firefox
-      - kolourpaint # img editor
-      - shotwell # photo manager
-      - lxappearance # theme manager
-      - mpv # video player
+      - kolourpaint        # img editor
+      - shotwell           # photo manager
+      - lxappearance       # theme manager
+      - mpv                # video player
       - openvpn
-      - rdesktop # remote desktop client
+      - rdesktop           # remote desktop client
       - papirus-icon-theme # icon theme
       - youtube-dl
     state: present
@@ -85,4 +85,4 @@
       # - gnome-ssh-askpass2 # ssh askpass gui
       - downgrade # package downgrader
       - otf-font-awesome
-      - pastel # color viewer
+      - pastel             # color viewer

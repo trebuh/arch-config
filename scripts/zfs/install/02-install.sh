@@ -136,7 +136,7 @@ EOF
 print "Configure networking"
 cat > /mnt/etc/systemd/network/enoX.network <<"EOF"
 [Match]
-Name=en*
+Name=eth*
 
 [Network]
 DHCP=ipv4
