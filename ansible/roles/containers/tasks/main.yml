@@ -9,7 +9,7 @@
       - kubectx         # switch clusters/namespaces
       - kustomize       # yaml templator
       - minikube        # virtualized local kubernetes cluster
-      # - k9s             # UI to interact with Kubernetes clusters
+      - k9s             # UI to interact with Kubernetes clusters
       - helm            # kubernetes package manager
       - vault           #  Hashicorp vault solution
       # - packer          # golden images creator
@@ -25,6 +25,7 @@
       - k3s-bin         # Lightweight Kubernetes in a single binary
       - stern           # tail multiple pods on Kubernetes
       - kubespy         # observe Kubernetes resources in real time
+      - terraform-docs-bin # terraform documentaion generator
 
 - name: install pip3 containers packages
   pip:
